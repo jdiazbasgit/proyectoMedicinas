@@ -29,7 +29,7 @@ public class ServletMedico extends HttpServlet {
 						.getMedicamentoByNombre(request.getParameter("nombreMedicamento"));
 				request.setAttribute("medicamento", medicamento);
 			}
-			if (request.getParameter("nombrePaciente") != null) {
+			if (request.getParameter("nombrePaciente") != null && request.getParameter("nombrePaciente") != "" ) {
 				String nombrePaciente = request.getParameter("nombrePaciente");
 				int id = Integer.parseInt(
 						nombrePaciente.substring(nombrePaciente.indexOf("(") + 1, nombrePaciente.indexOf(")")));

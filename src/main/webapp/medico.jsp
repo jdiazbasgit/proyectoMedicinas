@@ -40,44 +40,45 @@
 					</c:forEach>
 				</datalist>
 			</div>
-			<h4>Nombre medicamento : ${medicamento.nombreMedicamento}</h4>
-			<h4>Tipo medicamento : ${medicamento.tipoMedicamento}</h4>
-			<div class="form-group">
-				<a href="#generalidades" class="btn btn-primary"
-					data-toggle="collapse">Generalidades </a>
-				<div id="generalidades" class="collapse">
-					<textarea class="form-control" rows="5" id="comment"
-						disabled="true">${medicamento.generalidades }</textarea>
+			
+				<h4>Nombre medicamento : ${medicamento.nombreMedicamento}</h4>
+				<h4>Tipo medicamento : ${medicamento.tipoMedicamento}</h4>
+				<div class="form-group">
+					<a href="#generalidades" class="btn btn-primary"
+						data-toggle="collapse">Generalidades </a>
+					<div id="generalidades" class="collapse">
+						<textarea class="form-control" rows="5" id="comment"
+							disabled="true">${medicamento.generalidades }</textarea>
+					</div>
 				</div>
-			</div>
-			<div class="form-group">
-				<a href="#indicaciones" class="btn btn-primary"
-					data-toggle="collapse">Indicaciones </a>
-				<div id="indicaciones" class="collapse">
-					<textarea class="form-control" rows="5" id="comment"
-						disabled="true">${medicamento.indicaciones }</textarea>
+				<div class="form-group">
+					<a href="#indicaciones" class="btn btn-primary"
+						data-toggle="collapse">Indicaciones </a>
+					<div id="indicaciones" class="collapse">
+						<textarea class="form-control" rows="5" id="comment"
+							disabled="true">${medicamento.indicaciones }</textarea>
+					</div>
 				</div>
-			</div>
-			<div class="form-group">
-				<a href="#cuidados" class="btn btn-primary" data-toggle="collapse">Cuidados
-				</a>
-				<div id="cuidados" class="collapse">
-					<textarea class="form-control" rows="5" id="comment"
-						disabled="true">${medicamento.cuidados }</textarea>
+				<div class="form-group">
+					<a href="#cuidados" class="btn btn-primary" data-toggle="collapse">Cuidados
+					</a>
+					<div id="cuidados" class="collapse">
+						<textarea class="form-control" rows="5" id="comment"
+							disabled="true">${medicamento.cuidados }</textarea>
+					</div>
 				</div>
-			</div>
-			<div class="form-group">
-				<a href="#ram" class="btn btn-primary" data-toggle="collapse">Ram
-				</a>
-				<div id="ram" class="collapse">
-					<textarea class="form-control" rows="5" id="comment"
-						disabled="true">${medicamento.ram }</textarea>
+				<div class="form-group">
+					<a href="#ram" class="btn btn-primary" data-toggle="collapse">Ram
+					</a>
+					<div id="ram" class="collapse">
+						<textarea class="form-control" rows="5" id="comment"
+							disabled="true">${medicamento.ram }</textarea>
+					</div>
 				</div>
-			</div>
-
-
-
 		</form>
+		<a href="${medicamento.linkFichaTecnica}" class="btn btn-danger"
+			target="_new">Ficha técnicas</a>
+		
 		<form action="ServletRecetas" id="f2" method="post">
 
 
@@ -109,8 +110,8 @@
 					value="${medicamento.nombreMedicamento}"> <input
 					type="hidden" name="idMedicamento" value="${medicamento.id}">
 				<label for="receta">Tratamiento:</label> <input type="text"
-					class="form-control" placeholder="Introduce tratamiento" name="receta">
-				<label for="usuario">Historia:</label>
+					class="form-control" placeholder="Introduce tratamiento"
+					name="receta"> <label for="usuario">Historia:</label>
 				<textarea class="form-control" rows="5" id="comment" disabled="true">${datos }</textarea>
 			</div>
 			<button type="button" class="btn btn-warning"
