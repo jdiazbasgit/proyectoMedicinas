@@ -76,6 +76,10 @@
 				</div>
 			</div>
 			
+			<div>
+			
+			</div>
+			<a href="${medicamento.linkFichaTecnica}" class="btn btn-danger" target="_new">Ficha técnicas</a>
 			<button type="button" class="btn btn-warning"
 				onclick="javascript:document.location='login.jsp'">Salir</button>
 
