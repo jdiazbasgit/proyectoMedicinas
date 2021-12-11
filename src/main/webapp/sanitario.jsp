@@ -8,7 +8,13 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
 	<c:set var="tipo" value="sanitario"></c:set>
@@ -38,20 +44,36 @@
 			<h4>Nombre medicamento : ${medicamento.nombreMedicamento}</h4>
 			<h4>Tipo medicamento : ${medicamento.tipoMedicamento}</h4>
 			<div class="form-group">
-				<label for="usuario">Generalidades:</label>
-				<textarea class="form-control" rows="5" id="comment" disabled="true">${medicamento.generalidades }</textarea>
+				<a href="#generalidades" class="btn btn-primary"
+					data-toggle="collapse">Generalidades </a>
+				<div id="generalidades" class="collapse">
+					<textarea class="form-control" rows="5" id="comment"
+						disabled="true">${medicamento.generalidades }</textarea>
+				</div>
 			</div>
 			<div class="form-group">
-				<label for="usuario">Indicaciones:</label>
-				<textarea class="form-control" rows="5" id="comment" disabled="true">${medicamento.indicaciones }</textarea>
+				<a href="#indicaciones" class="btn btn-primary"
+					data-toggle="collapse">Indicaciones </a>
+				<div id="indicaciones" class="collapse">
+					<textarea class="form-control" rows="5" id="comment"
+						disabled="true">${medicamento.indicaciones }</textarea>
+				</div>
 			</div>
 			<div class="form-group">
-				<label for="usuario">Cuidados:</label>
-				<textarea class="form-control" rows="5" id="comment" disabled="true">${medicamento.cuidados }</textarea>
+				<a href="#cuidados" class="btn btn-primary" data-toggle="collapse">Cuidados
+				</a>
+				<div id="cuidados" class="collapse">
+					<textarea class="form-control" rows="5" id="comment"
+						disabled="true">${medicamento.cuidados }</textarea>
+				</div>
 			</div>
 			<div class="form-group">
-				<label for="usuario">Ram:</label>
-				<textarea class="form-control" rows="5" id="comment" disabled="true">${medicamento.ram }</textarea>
+				<a href="#ram" class="btn btn-primary" data-toggle="collapse">Ram
+				</a>
+				<div id="ram" class="collapse">
+					<textarea class="form-control" rows="5" id="comment"
+						disabled="true">${medicamento.ram }</textarea>
+				</div>
 			</div>
 			
 			<button type="button" class="btn btn-warning"
