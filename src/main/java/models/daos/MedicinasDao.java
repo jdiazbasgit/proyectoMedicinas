@@ -40,7 +40,7 @@ public class MedicinasDao {
 		Login resultado = new Login();
 		conectar();
 		PreparedStatement pst = getConexion().prepareStatement(
-				"select u.usuario,r.rol from tb_registro u, roles r  where u.usuario=? and u.clave=? and u.roles_id=r.id");
+				"select u.usuario,r.rol, u.nombre, u.apellidos from tb_registro u, roles r  where u.usuario=? and u.clave=? and u.roles_id=r.id");
 		pst.setString(1, usuario);
 		pst.setString(2, clave);
 		ResultSet rs = pst.executeQuery();
@@ -50,6 +50,7 @@ public class MedicinasDao {
 			resultado.setResultado(true);
 			resultado.setUsuario(rs.getString(1));
 			resultado.setRol(rs.getString(2));
+			resultado.setNombrePaciente(rs.getString(3)+" "+rs.getString(2));
 		}
 		getConexion().close();
 

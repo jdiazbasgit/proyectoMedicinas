@@ -3,6 +3,7 @@ package models.beans;
 public class Login {
 	private String rol;
 	private boolean resultado;
+	private String nombrePaciente;
 	private String usuario;
 
 	public String getRol() {
@@ -27,5 +28,13 @@ public class Login {
 
 	public void setUsuario(String usuario) {
 		this.usuario = usuario;
+	}
+
+	public String getNombrePaciente() {
+		return nombrePaciente;
+	}
+
+	public void setNombrePaciente(String nombrePaciente) {
+		this.nombrePaciente = nombrePaciente;
 	}
 }

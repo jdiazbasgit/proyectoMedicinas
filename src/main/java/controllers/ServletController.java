@@ -35,6 +35,7 @@ public class ServletController extends HttpServlet {
 			{
 				request.getSession(true).setAttribute("rol", login.getRol());
 				request.getSession(true).setAttribute("usuario", login.getUsuario());
+				request.setAttribute("nombrePaciente", login.getNombrePaciente());
 				switch(login.getRol()) {
 				case "medico":
 					getServletContext().getRequestDispatcher("/ServletMedico").forward(request, response);

@@ -13,22 +13,33 @@ import models.daos.MedicinasDao;
 
 public class ServletPaciente extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    public ServletPaciente() {
-        super();
-    }
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		MedicinasDao medicinasDao= new MedicinasDao();
+	public ServletPaciente() {
+		super();
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		MedicinasDao medicinasDao = new MedicinasDao();
 		try {
 			if (request.getParameter("nombre") != null) {
 				Medicamento medicamento = medicinasDao.getMedicamentoByNombre(request.getParameter("nombre"));
 				request.setAttribute("medicamento", medicamento);
 			}
-			String nombrePaciente=request.getParameter("nombrePaciente");
-			int id=Integer.parseInt(nombrePaciente.substring(nombrePaciente.indexOf("(")+1,nombrePaciente.indexOf(")")));
-			String datos=medicinasDao.getDatosDeUsuario(id);
-			request.setAttribute("datos", datos);
+			
+			if (request.getParameter("nombrePaciente") != null && request.getParameter("nombrePaciente") != "") {
+				String nombrePaciente = request.getParameter("nombrePaciente");
+				int id = Integer.parseInt(
+						nombrePaciente.substring(nombrePaciente.indexOf("(") + 1, nombrePaciente.indexOf(")")));
+				String datos = medicinasDao.getDatosDeUsuario(id);
+				request.setAttribute("datos", datos);
+			}
+			if (request.getAttribute("nombrePaciente") != null) {
+				
+				String datos = medicinasDao.getDatosDeUsuario((String) request.getSession(true).getAttribute("usuario"));
+				request.setAttribute("datos", datos);
+			}
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -36,7 +47,8 @@ public class ServletPaciente extends HttpServlet {
 		getServletContext().getRequestDispatcher("/paciente.jsp").forward(request, response);
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		doGet(request, response);
 	}
 

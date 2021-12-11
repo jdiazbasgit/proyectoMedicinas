@@ -19,9 +19,10 @@
 	<div class="container">
 		<div class="text-center">
 			<h1>PACIENTE</h1>
+			<h3>${nombrePaciente }</h3>
 		</div>
 		<div class="form-group">
-			<label for="usuario">Medicinas:</label>
+			<label for="usuario">Tratamientos:</label>
 			<textarea class="form-control" rows="5" id="comment" >${datos }</textarea>
 		</div>
 
