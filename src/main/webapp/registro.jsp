@@ -60,7 +60,7 @@ volver=()=>document.location="/medicalia/"
 				class="form-control" id="tipo" name="tipo">
 				<option value="0">Selecciona opcion...</option>
 				<option value="1">Medico</option>
-				<option value="2">Sanitario</option>
+				<option value="2">Enfermero</option>
 				<option value="3">Paciente</option>
 			</select>
 
