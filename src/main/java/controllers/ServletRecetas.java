@@ -37,7 +37,6 @@ public class ServletRecetas extends HttpServlet {
 				int id=Integer.parseInt(nombrePaciente.substring(nombrePaciente.indexOf("(")+1,nombrePaciente.indexOf(")")));
 				String datos=medicinasDao.getDatosDeUsuario(id);
 				request.setAttribute("datos", datos);
-				Registro registro=medicinasDao.getPacienteById(request.getParameter("id"));
 				request.setAttribute("nombrePaciente", request.getParameter("nombrePaciente"));
 			}
 			List<Registro> pacientes=medicinasDao.getPacientes();

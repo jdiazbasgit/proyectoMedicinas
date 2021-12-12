@@ -50,7 +50,7 @@ public class MedicinasDao {
 			resultado.setResultado(true);
 			resultado.setUsuario(rs.getString(1));
 			resultado.setRol(rs.getString(2));
-			resultado.setNombrePaciente(rs.getString(3)+" "+rs.getString(2));
+			resultado.setNombrePaciente(rs.getString(3)+" "+rs.getString(4));
 		}
 		getConexion().close();
 
@@ -66,7 +66,7 @@ public class MedicinasDao {
 		StringBuilder resultado = new StringBuilder();
 		ResultSet rs = pst.executeQuery();
 		while (rs.next()) {
-			resultado.append(rs.getString(2) + ": " + rs.getString(1) + "\n");
+			resultado.append( rs.getString(1) + "\n");
 		}
 		return resultado.toString();
 	}
@@ -80,7 +80,7 @@ public class MedicinasDao {
 		StringBuilder resultado = new StringBuilder();
 		ResultSet rs = pst.executeQuery();
 		while (rs.next()) {
-			resultado.append(rs.getString(1) + ": " + rs.getString(2) + "\n");
+			resultado.append(rs.getString(2) + "\n");
 		}
 		return resultado.toString();
 	}
@@ -163,9 +163,6 @@ public class MedicinasDao {
 		
 	}
 
-	public Registro getPacienteById(String parameter) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 }
